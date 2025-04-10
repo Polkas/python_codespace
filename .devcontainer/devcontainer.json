@@ -1,18 +1,38 @@
 {
-    "name": "Python Development",
-    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10",
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+    "name": "R Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12",
+            "installJupyterlab": true
+        }
     },
-    "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-toolsai.jupyter",
-        "njpwerner.autodocstring",
-        "formulahendry.code-runner",
-        "eamodio.gitlens"
-    ],
-    "forwardPorts": [8888],
-    "postCreateCommand": "pip install -r requirements.txt",
-    "remoteUser": "vscode"
+    "forwardPorts": [8787],
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            "settings": {
+                "files.autoSave": "afterDelay",
+                "files.autoSaveDelay": 1000,
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.formatOnPaste": true,
+                    "editor.defaultFormatter": "ms-python.autopep8"
+                },
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.autopep8",
+                "ms-toolsai.jupyter",
+
+                "eamodio.gitlens",
+                "github.copilot",
+                "github.copilot-chat"
+            ]
+        }
+    },
+    "postCreateCommand": "echo Hello World"
 }
