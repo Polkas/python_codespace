@@ -3,7 +3,7 @@
     //"build": {
 	//	"dockerfile": "Dockerfile"
     //},
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/universal:2.9.0-focal",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/python:1": {
