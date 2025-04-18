@@ -1,8 +1,5 @@
 {
     "name": "Python Development",
-    //"build": {
-	//	"dockerfile": "Dockerfile"
-    //},
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
@@ -12,7 +9,6 @@
         }
     },
     "customizations": {
-        // Configure properties specific to VS Code.
         "vscode": {
             "settings": {
                 "files.autoSave": "afterDelay",
@@ -23,7 +19,6 @@
                     "editor.defaultFormatter": "ms-python.autopep8"
                 },
             },
-            // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
